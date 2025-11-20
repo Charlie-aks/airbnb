@@ -15,7 +15,7 @@ export type Room = {
     {
       id: "1",
       name: "Căn hộ studio trung tâm Seoul",
-      image: "/images/seoul.avif;",
+      image: "/images/seoul.avif",
       price: 890000,
       rating: 4.9,
       reviewCount: 240,
@@ -93,4 +93,3 @@ export type Room = {
       isFavorite: false,
     },
   ];
-  
