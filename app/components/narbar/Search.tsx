@@ -4,25 +4,47 @@ import { BiSearch } from "react-icons/bi";
 
 const Search = () => {
   return (
-    <div className="border w-full md:w-auto py-2 rounded-full shadow-sm hover:shadow-md transition cursor-pointer">
-      <div className="flex flex-row items-center justify-between">
-        <div className="text-sm font-semibold px-6">
-            Anywhere
+    <div className="
+      ml-10
+      w-full md:w-[600px] 
+      py-1.5 
+      px-8
+      rounded-full 
+      shadow-lg 
+      hover:shadow-xl 
+      transition 
+      cursor-pointer 
+      bg-white
+      border
+    ">
+      <div className="flex flex-row items-center gap-4">
+
+        {/* Địa điểm */}
+        <div className="flex-1 flex flex-col items-center">
+          <span className="text-base font-semibold">Địa điểm</span>
+          <span className="text-gray-500 text-sm font-normal">Tìm kiếm điểm đến</span>
         </div>
-        <div className="hidden sm:block text-sm font-semibold px-6 border-x flex-1 text-center">
-            Any Week
+
+        {/* Thời gian */}
+        <div className="hidden sm:flex flex-1 flex-col items-center border-x px-4">
+          <span className="text-base font-semibold">Thời gian</span>
+          <span className="text-gray-500 text-sm font-normal">Thêm ngày</span>
         </div>
-        <div className="text-sm pl-6 pr-2 text-gray-600 flex flex-row items-center gap-3">
-          <div className="hidden sm:block">
-            Add Guests
-          </div>
-          <div className="p-2 bg-rose-500 rounded-full text-white">
-            <BiSearch size={18}/>
-          </div>
+
+        {/* Khách */}
+        <div className="flex-1 flex flex-col items-center sm:items-start px-4">
+          <span className="font-semibold">Khách</span>
+          <span className="text-gray-500 text-sm">Thêm khách</span>
         </div>
+
+        {/* Icon Search */}
+        <div className="ml-auto p-3 bg-rose-500 rounded-full text-white shadow-md">
+          <BiSearch size={20} />
+        </div>
+
       </div>
     </div>
-  )
+  );
 }
 
-export default Search
+export default Search;

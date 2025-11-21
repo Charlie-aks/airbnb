@@ -17,7 +17,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
   };
 
   return (
-    <div className="group cursor-pointer flex-shrink-0 w-64">
+    <div className="group cursor-pointer w-full">
       <div className="flex flex-col gap-2 w-full">
         <div className="aspect-square w-full relative overflow-hidden rounded-lg">
           <Image
@@ -51,7 +51,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
           </div>
           <div className="flex items-baseline gap-1">
             <span className="text-base font-semibold">
-              ₩{room.price.toLocaleString()}
+              ₩{room.price.toLocaleString("ko-KR")}
             </span>
             <span className="text-sm text-neutral-500">/đêm</span>
           </div>
