@@ -1,4 +1,4 @@
-import ListingContainer from './components/ListingContainer';
+import ListingContainer from './components/listings/sections/ListingContainer';
 
 export default function Home() {
   return (

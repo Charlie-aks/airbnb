@@ -1,41 +1,35 @@
 'use client';
 
 import Image from 'next/image';
-import { FaHeart } from 'react-icons/fa6';
-import { useState } from 'react';
+import { useRouter } from 'next/navigation'; // 1. Import useRouter
 import { Room } from '@/app/data/rooms';
+import { AiOutlineHeart } from 'react-icons/ai';
 
 interface RoomCardProps {
   room: Room;
 }
-
 const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
-  const [isFavorite, setIsFavorite] = useState(room.isFavorite);
-
-  const handleFavoriteClick = () => {
-    setIsFavorite(!isFavorite);
-  };
-
+  const router = useRouter(); 
   return (
-    <div className="group cursor-pointer w-full">
+    <div 
+      onClick={() => router.push(`/listings/${room.id}`)}
+      className="group cursor-pointer w-full"
+    >
       <div className="flex flex-col gap-2 w-full">
         <div className="aspect-square w-full relative overflow-hidden rounded-lg">
           <Image
             fill
             alt={room.name}
-            src={room.image}
+            src={room.images[0]}
             className="object-cover h-full w-full group-hover:scale-110 transition"
           />
           <div className="absolute top-3 right-3">
-            <button
-              onClick={handleFavoriteClick}
-              className="bg-white rounded-full p-2 shadow-md hover:shadow-lg transition"
-            >
-              <FaHeart
-                size={20}
-                className={isFavorite ? 'text-rose-500' : 'text-gray-400'}
-              />
-            </button>
+              <div className="absolute top-3 right-3">
+                <div className="hover:opacity-80 transition cursor-pointer relative">
+                  <AiOutlineHeart size={28} className="fill-white absolute -top-0.5 -right-0.5" />
+                  <AiOutlineHeart size={24} className="fill-neutral-500/70" />
+                </div>
+              </div>
           </div>
         </div>
         <div className="flex flex-col gap-1">

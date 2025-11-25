@@ -6,6 +6,7 @@ const ClientOnly = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     setHasMounted(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!hasMounted) return null;

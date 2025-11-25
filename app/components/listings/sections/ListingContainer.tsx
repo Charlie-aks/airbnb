@@ -1,10 +1,9 @@
-'use client';
 
 import { rooms } from '@/app/data/rooms';
-import Container from './Container';
-import Heading from './Heading';
-import RoomCard from './RoomCard';
-import AnimatedCard from './AnimatedCard';
+import Container from '../../ui/Container';
+import Heading from '../../ui/Heading';
+import AnimatedCard from '../cards/AnimatedCard';
+import RoomCard from '../cards/RoomCard';
 
 const ListingsContainer = () => {
   const sections = [
@@ -18,7 +17,7 @@ const ListingsContainer = () => {
 
   return (
     <Container>
-      <div className="pt-32 pb-20 space-y-12">
+      <div className="pt-34 pb-16 space-y-12">
         {sections.map((section, index) => (
           <div key={index}>
             <Heading
@@ -29,11 +28,13 @@ const ListingsContainer = () => {
               className="overflow-x-auto flex gap-2 mt-8 pb-4 hide-scrollbar"
               style={{ scrollBehavior: 'smooth' }}
             >
-              {rooms.map((room) => (
-                <div key={room.id} className="flex-shrink-0 w-48">
-                 <AnimatedCard room={room} />
-                </div>
-              ))}
+             {rooms.map((room) => (
+              <div key={room.id} className="shrink-0 w-[280px]">
+                <AnimatedCard>
+                  <RoomCard room={room} />
+                </AnimatedCard>
+              </div>
+            ))}
             </div>
           </div>
         ))}

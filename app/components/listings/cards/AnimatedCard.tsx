@@ -2,19 +2,18 @@
 
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
-import RoomCard from "./RoomCard";
-import { Room } from "@/app/data/rooms";
 
+// 1. Sửa interface: Nhận children thay vì room
 interface AnimatedCardProps {
-  room: Room;
+  children: React.ReactNode; 
 }
 
-export default function AnimatedCard({ room }: AnimatedCardProps) {
+export default function AnimatedCard({ children }: AnimatedCardProps) {
   const ref = useRef<HTMLDivElement | null>(null);
 
   const isInView = useInView(ref, {
     once: true,
-    amount: 0.2, // chạy khi 20% card vào viewport
+    amount: 0.2, 
   });
 
   const controls = useAnimation();
@@ -31,8 +30,10 @@ export default function AnimatedCard({ room }: AnimatedCardProps) {
       initial={{ opacity: 0, y: 40 }}
       animate={controls}
       transition={{ duration: 0.5, ease: "easeOut" }}
+      className="h-full" // Thêm h-full để tránh lỗi layout
     >
-      <RoomCard room={room} />
+      {/* 2. Render children ở đây */}
+      {children} 
     </motion.div>
   );
 }

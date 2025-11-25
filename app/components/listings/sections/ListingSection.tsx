@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { FaChevronRight } from 'react-icons/fa6';
 import { Room } from '@/app/data/rooms';
-import RoomCard from './RoomCard';
+import RoomCard from '../cards/RoomCard';
 
 interface ListingSectionProps {
   title: string;

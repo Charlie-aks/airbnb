@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import Narbar from "./components/narbar/Narbar";
-import ClientOnly from "./components/ClientOnly";
-import RegisterModal from "./components/modal/RegisterModal";
+import Narbar from "./components/navbar/Narbar";
+import ClientOnly from "./components/ui/ClientOnly";
+import RegisterModal from "./components/modals/RegisterModal";
 import ToasterProvider from "./providers/ToasterProvider";
 import Footer from "./components/Footer";
+import 'react-date-range/dist/styles.css'; 
+import 'react-date-range/dist/theme/default.css';
+import LoginModal from "./components/modals/LoginModal";
 
 const fontNunito = Nunito({
   subsets: ["latin"],
@@ -28,6 +31,7 @@ export default function RootLayout({
       >
       <ClientOnly>
         <ToasterProvider/>
+        <LoginModal/>
         <RegisterModal/>
         <Narbar/>
       </ClientOnly>

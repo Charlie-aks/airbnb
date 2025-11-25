@@ -3,7 +3,7 @@
 export type Room = {
     id: string;
     name: string;
-    image: string;
+    images: string[];
     price: number;        // giá mỗi đêm (VND)
     rating: number;       // số sao
     reviewCount: number;  // số người đánh giá
@@ -15,7 +15,7 @@ export type Room = {
     {
       id: "1",
       name: "Căn hộ studio trung tâm Seoul",
-      image: "/images/seoul.avif",
+      images: ["/images/rooms/seoul.avif", "/images/rooms/seoul.avif", "/images/rooms/seoul.avif", "/images/rooms/seoul.avif",],
       price: 890000,
       rating: 4.9,
       reviewCount: 240,
@@ -25,7 +25,7 @@ export type Room = {
     {
       id: "2",
       name: "Căn hộ view tháp Namsan",
-      image: "/images/seoul2.avif",
+      images: ["/images/rooms/seoul2.avif","/images/rooms/seoul2.avif", "/images/rooms/seoul2.avif", "/images/rooms/seoul2.avif",],
       price: 1050000,
       rating: 4.8,
       reviewCount: 198,
@@ -35,7 +35,7 @@ export type Room = {
     {
       id: "3",
       name: "Studio gần Hongdae nightlife",
-      image: "/images/seoul3.avif",
+      images: ["/images/rooms/seoul3.avif", "/images/rooms/seoul3.avif", "/images/rooms/seoul3.avif", "/images/rooms/seoul3.avif",],
       price: 730000,
       rating: 4.7,
       reviewCount: 154,
@@ -45,7 +45,7 @@ export type Room = {
     {
       id: "4",
       name: "Căn hộ cao cấp khu Gangnam",
-      image: "/images/seoul4.avif",
+      images: ["/images/rooms/seoul4.avif", "/images/rooms/seoul4.avif", "/images/rooms/seoul4.avif", "/images/rooms/seoul4.avif",],
       price: 1550000,
       rating: 5.0,
       reviewCount: 410,
@@ -55,7 +55,7 @@ export type Room = {
     {
       id: "5",
       name: "Mini apartment gần Lotte Tower",
-      image: "/images/seoul5.avif",
+      images: ["/images/rooms/seoul5.avif", "/images/rooms/seoul5.avif", "/images/rooms/seoul5.avif", "/images/rooms/seoul5.avif",],
       price: 950000,
       rating: 4.6,
       reviewCount: 120,
@@ -65,7 +65,7 @@ export type Room = {
     {
       id: "6",
       name: "Căn hộ 1 phòng ngủ gần Đại học Yonsei",
-      image: "/images/seoul6.avif",
+      images: ["/images/rooms/seoul6.avif", "/images/rooms/seoul6.avif", "/images/rooms/seoul6.avif", "/images/rooms/seoul6.avif",],
       price: 800000,
       rating: 4.5,
       reviewCount: 89,
@@ -75,7 +75,7 @@ export type Room = {
     {
       id: "7",
       name: "Penthouse sang trọng ngắm toàn cảnh Seoul",
-      image: "/images/seoul7.avif",
+      images: ["/images/rooms/seoul7.avif", "/images/rooms/seoul7.avif", "/images/rooms/seoul7.avif", "/images/rooms/seoul7.avif",],
       price: 2450000,
       rating: 5.0,
       reviewCount: 330,
@@ -85,7 +85,7 @@ export type Room = {
     {
       id: "8",
       name: "Căn hộ tiện nghi gần COEX Mall",
-      image: "/images/seoul8.avif",
+      images: ["/images/rooms/seoul8.avif", "/images/rooms/seoul8.avif", "/images/rooms/seoul8.avif", "/images/rooms/seoul8.avif",],
       price: 1100000,
       rating: 4.8,
       reviewCount: 160,
